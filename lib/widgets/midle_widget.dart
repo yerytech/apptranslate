@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+
+import '../Provider/providers.dart';
 import 'dropdown_btn.dart';
 
-class MidelWidget extends StatelessWidget {
+class MidelWidget extends ConsumerWidget {
   const MidelWidget({
     super.key,
     required this.size,
@@ -13,7 +16,10 @@ class MidelWidget extends StatelessWidget {
 
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context,ref) {
+    final lg1= ref.watch(language1Provider);
+    final lg2= ref.watch(language2Provider);
+    
      final  List<String> items =['es','en'];
     return Container(
      padding: const  EdgeInsets.only(left: 2,right: 2),
@@ -24,9 +30,14 @@ class MidelWidget extends StatelessWidget {
        mainAxisAlignment: MainAxisAlignment.spaceAround,
        children: [
     
-     DropDownBtn(items: items),
+     DropDownBtn(items: items, value: lg1.toString(), onchanged: (String? value ) { 
+        ref.read(language1Provider.notifier).selectLanguage(value!);
+      
+      }, ),
      const  Icon(Icons.arrow_forward_outlined),
-     DropDownBtn(items: items)
+     DropDownBtn(items: items, value: lg2.toString(), onchanged: (String?value ) {
+      ref.read(language2Provider.notifier).selectLanguage(value!);
+       },)
        
     
     

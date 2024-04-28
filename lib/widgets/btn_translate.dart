@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 class BtnTranslate extends StatelessWidget {
   const BtnTranslate({
     super.key,
-    required this.size,
+    required this.size, required this.onpressed,
   });
 
   final Size size;
-
+  final VoidCallback onpressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: TextButton(onPressed: (){},
+      child: TextButton(onPressed: onpressed,
       style: ButtonStyle(
        minimumSize: MaterialStatePropertyAll(Size(size.width*0.5, size.height*0.2*(0.4))),
        backgroundColor: MaterialStatePropertyAll(Colors.blue.shade600)), 
