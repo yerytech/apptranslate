@@ -20,7 +20,18 @@ class MidelWidget extends ConsumerWidget {
     final lg1= ref.watch(language1Provider);
     final lg2= ref.watch(language2Provider);
     
-     final  List<String> items =['es','en'];
+     final  List<String> items =[
+    "en",
+    "es",
+    "fr",
+    "de",
+    "it",
+    "pt",
+    "ru",
+    "zh",
+    "ja",
+    "ar",
+    "hi"];
     return Container(
      padding: const  EdgeInsets.only(left: 2,right: 2),
      // color: Colors.red,

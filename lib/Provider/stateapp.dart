@@ -60,12 +60,3 @@ class FinalTextProvider extends _$FinalTextProvider {
   }
 }
 
-// Future algo ()async{
-// final translator = SimplyTranslator(EngineType.google);
-//   final input = "agua";
-
- 
-//  final text= await   translator.trSimply(input,'es','en');
-//  print(text);
-      
-// }
