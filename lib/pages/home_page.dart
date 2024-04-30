@@ -12,7 +12,7 @@ const HomePage({super.key});
    
       
     final size= MediaQuery.of(context).size;
-    final textToTrasnlate= TextEditingController();
+    final textToTrasnlate= TextEditingController(text: ref.watch(textToTranslateProvider).toString());
     final textTrasnlated= TextEditingController(text: ref.watch(textTranslatedProvider).toString());
     return  Scaffold(
       body: SafeArea(
